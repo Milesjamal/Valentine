@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-geartrail-red: #E31E24;
+  --color-geartrail-dark: #1A1A1B;
+  --color-geartrail-gray: #3D3D3F;
+}
