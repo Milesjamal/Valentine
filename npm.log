@@ -11,3 +11,16 @@
   LARAVEL v13.18.1  plugin v3.1.0
 
   ➜  APP_URL: http://localhost
+11:22:30 AM [vite] full reload resources/views/welcome.blade.php
+11:22:34 AM [vite] full reload app/Livewire/PublicGallery.php
+11:22:34 AM [vite] full reload resources/views/livewire/public-gallery.blade.php
+11:22:34 AM [vite] full reload app/Livewire/BookingWizard.php
+11:22:34 AM [vite] full reload resources/views/livewire/booking-wizard.blade.php
+11:22:34 AM [vite] full reload app/Livewire/TruckHireCalculator.php
+11:22:34 AM [vite] full reload resources/views/livewire/truck-hire-calculator.blade.php
+11:23:19 AM [vite] full reload app/Livewire/PublicGallery.php
+11:25:18 AM [vite] full reload resources/views/livewire/public-gallery.blade.php
+11:25:22 AM [vite] full reload app/Livewire/BookingWizard.php
+11:25:30 AM [vite] full reload resources/views/livewire/booking-wizard.blade.php
+11:28:48 AM [vite] full reload app/Livewire/TruckHireCalculator.php
+11:28:52 AM [vite] full reload resources/views/livewire/truck-hire-calculator.blade.php
