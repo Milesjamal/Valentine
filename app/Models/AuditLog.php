@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class AuditLog extends Model
 {
-    public $timestamps = false;
+    use HasFactory;
 
     protected $fillable = [
         'user_id',
@@ -23,10 +23,9 @@ class AuditLog extends Model
     protected $casts = [
         'old_values' => 'json',
         'new_values' => 'json',
-        'created_at' => 'datetime',
     ];
 
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

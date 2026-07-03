@@ -5,21 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CustomerNote extends Model
+class JobNote extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'customer_id',
+        'job_id',
         'author_id',
-        'channel',
         'note',
+        'is_customer_visible',
     ];
 
-    public function customer()
-    {
-        return $this->belongsTo(Customer::class);
-    }
+    protected $casts = [
+        'is_customer_visible' => 'boolean',
+    ];
 
     public function author()
     {

@@ -1,0 +1,25 @@
+
+  [39;41;1m FAIL [39;49;22m[39m Tests\Feature\FrontendNavigationTest[39m
+  [31;1m⨯[39;22m[90m [39m[90madmin can access all dashboard sections[39m
+  [31m────────────────────────────────────────────────────────────────────────────[39m
+  [41;1m FAILED [49;22m [1mTests\Feature\FrontendNavigationTest[22m [90m>[39m admin can…  [41;1m QueryException [49;22m
+[39;1m  SQLSTATE[HY000]: General error: 1 table audit_logs has no column named updated_at (Connection: sqlite, Database: :memory:, SQL: insert into "audit_logs" ("user_id", "action", "auditable_type", "auditable_id", "old_values", "new_values", "ip_address", "user_agent", "updated_at", "created_at") values (?, created, App\Models\Branch, 1, ?, {"name":"Test Branch","code":"TB01","updated_at":"2026-07-03 04:59:55","created_at":"2026-07-03 04:59:55","id":1}, 127.0.0.1, Symfony, 2026-07-03 04:59:55, 2026-07-03 04:59:55))[39;22m
+
+  at [32mvendor/laravel/framework/src/Illuminate/Database/Connection.php[39m:[32m857[39m
+    853▕             $exceptionType = ($isUniqueConstraintError = $this->isUniqueConstraintError($e))
+    854▕                 ? UniqueConstraintViolationException::class
+    855▕                 : QueryException::class;
+    856▕
+  ➜ 857▕             $exception = new $exceptionType(
+    858▕                 $this->getNameWithReadWriteType(),
+    859▕                 $query,
+    860▕                 $this->prepareBindings($bindings),
+    861▕                 $e,
+
+      [2m+19 vendor frames [22m
+  [33m20  [39m[39;1mapp/Observers/AuditObserver.php[39;22m:[39;1m37[39;22m
+  [33m21  [39m[39;1mapp/Observers/AuditObserver.php[39;22m:[39;1m11[39;22m
+
+
+  [90mTests:[39m    [31;1m1 failed[39;22m[90m (0 assertions)[39m
+  [90mDuration:[39m [39m0.55s[39m
