@@ -2,41 +2,47 @@
 
 namespace App\Observers;
 
-use App\Models\AuditLog;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
 
 class AuditObserver
 {
-    protected function log(Model $model, string $action)
+    public function created(Model $model): void
     {
-        AuditLog::create([
-            'user_id' => Auth::id(),
-            'action' => $action,
-            'auditable_type' => get_class($model),
-            'auditable_id' => $model->id,
-            'old_values' => $action === 'updated' ? array_intersect_key($model->getOriginal(), $model->getDirty()) : null,
-            'new_values' => $action === 'deleted' ? null : $model->getDirty(),
-            'ip_address' => Request::ip(),
-            'user_agent' => Request::userAgent(),
-        ]);
+        $this->logAction($model, 'created', null, $model->getAttributes());
     }
 
-    public function created(Model $model)
+    public function updating(Model $model): void
     {
-        $this->log($model, 'created');
-    }
+        // Capture changes before they are saved
+        $oldValues = array_intersect_key($model->getOriginal(), $model->getDirty());
+        $newValues = $model->getDirty();
 
-    public function updated(Model $model)
-    {
-        if ($model->getDirty()) {
-            $this->log($model, 'updated');
+        if (!empty($newValues)) {
+            $this->logAction($model, 'updated', $oldValues, $newValues);
         }
     }
 
-    public function deleted(Model $model)
+    public function deleted(Model $model): void
     {
-        $this->log($model, 'deleted');
+        $this->logAction($model, 'deleted', $model->getOriginal(), null);
+    }
+
+    protected function logAction(Model $model, string $action, ?array $old, ?array $new): void
+    {
+        // Avoid infinite loop if auditing the audit log itself
+        if ($model instanceof \App\Models\AuditLog) {
+            return;
+        }
+
+        \App\Models\AuditLog::create([
+            'user_id' => auth()->id(),
+            'action' => $action,
+            'auditable_type' => get_class($model),
+            'auditable_id' => $model->getKey(),
+            'old_values' => $old,
+            'new_values' => $new,
+            'ip_address' => request()->ip(),
+            'user_agent' => request()->userAgent(),
+        ]);
     }
 }

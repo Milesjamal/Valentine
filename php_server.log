@@ -1,0 +1,100 @@
+[Fri Jul  3 02:43:07 2026] PHP 8.3.6 Development Server (http://127.0.0.1:8001) started
+[Fri Jul  3 02:43:09 2026] 127.0.0.1:53744 Accepted
+[Fri Jul  3 02:43:10 2026] 127.0.0.1:53744 [200]: GET /
+[Fri Jul  3 02:43:10 2026] 127.0.0.1:53744 Closing
+[Fri Jul  3 02:43:11 2026] 127.0.0.1:53756 Accepted
+[Fri Jul  3 02:43:11 2026] 127.0.0.1:53756 [200]: GET /login
+[Fri Jul  3 02:43:11 2026] 127.0.0.1:53756 Closing
+[Fri Jul  3 02:43:11 2026] 127.0.0.1:53770 Accepted
+[Fri Jul  3 02:43:11 2026] 127.0.0.1:53770 [200]: GET /assets/logo.webp
+[Fri Jul  3 02:43:11 2026] 127.0.0.1:53770 Closing
+[Fri Jul  3 02:43:11 2026] 127.0.0.1:53780 Accepted
+[Fri Jul  3 02:43:12 2026] 127.0.0.1:53780 [302]: POST /login
+[Fri Jul  3 02:43:12 2026] 127.0.0.1:53780 Closing
+[Fri Jul  3 02:43:12 2026] 127.0.0.1:53784 Accepted
+[Fri Jul  3 02:43:12 2026] 127.0.0.1:53784 [404]: GET /home
+[Fri Jul  3 02:43:12 2026] 127.0.0.1:53784 Closing
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53792 Accepted
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53792 [302]: GET /jobs
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53792 Closing
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53800 Accepted
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53800 [200]: GET /2fa-setup
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53800 Closing
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53804 Accepted
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53806 Accepted
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53804 [404]: GET /livewire-64d00f09/livewire.js?id=657d57c2 - No such file or directory
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53804 Closing
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53806 [200]: GET /assets/logo.webp
+[Fri Jul  3 02:43:14 2026] 127.0.0.1:53806 Closing
+[Fri Jul  3 02:43:15 2026] 127.0.0.1:46026 Accepted
+[Fri Jul  3 02:43:15 2026] 127.0.0.1:46026 [302]: GET /inventory
+[Fri Jul  3 02:43:15 2026] 127.0.0.1:46026 Closing
+[Fri Jul  3 02:43:15 2026] 127.0.0.1:46028 Accepted
+[Fri Jul  3 02:43:16 2026] 127.0.0.1:46028 [200]: GET /2fa-setup
+[Fri Jul  3 02:43:16 2026] 127.0.0.1:46028 Closing
+[Fri Jul  3 02:43:16 2026] 127.0.0.1:46044 Accepted
+[Fri Jul  3 02:43:16 2026] 127.0.0.1:46052 Accepted
+[Fri Jul  3 02:43:16 2026] 127.0.0.1:46044 [200]: GET /assets/logo.webp
+[Fri Jul  3 02:43:16 2026] 127.0.0.1:46052 [404]: GET /livewire-64d00f09/livewire.js?id=657d57c2 - No such file or directory
+[Fri Jul  3 02:43:16 2026] 127.0.0.1:46052 Closing
+[Fri Jul  3 02:43:16 2026] 127.0.0.1:46044 Closing
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46056 Accepted
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46056 [302]: GET /trucks
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46056 Closing
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46062 Accepted
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46062 [200]: GET /2fa-setup
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46062 Closing
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46066 Accepted
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46080 Accepted
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46066 [200]: GET /assets/logo.webp
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46080 [404]: GET /livewire-64d00f09/livewire.js?id=657d57c2 - No such file or directory
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46080 Closing
+[Fri Jul  3 02:43:17 2026] 127.0.0.1:46066 Closing
+[Fri Jul  3 02:46:19 2026] 127.0.0.1:49928 Accepted
+[Fri Jul  3 02:46:19 2026] 127.0.0.1:49928 [200]: GET /login
+[Fri Jul  3 02:46:19 2026] 127.0.0.1:49928 Closing
+[Fri Jul  3 02:46:19 2026] 127.0.0.1:49932 Accepted
+[Fri Jul  3 02:46:19 2026] 127.0.0.1:49932 [200]: GET /assets/logo.webp
+[Fri Jul  3 02:46:19 2026] 127.0.0.1:49932 Closing
+[Fri Jul  3 02:46:20 2026] 127.0.0.1:49934 Accepted
+[Fri Jul  3 02:46:20 2026] 127.0.0.1:49934 [302]: POST /login
+[Fri Jul  3 02:46:20 2026] 127.0.0.1:49934 Closing
+[Fri Jul  3 02:46:20 2026] 127.0.0.1:49938 Accepted
+[Fri Jul  3 02:46:20 2026] 127.0.0.1:49938 [404]: GET /home
+[Fri Jul  3 02:46:20 2026] 127.0.0.1:49938 Closing
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49954 Accepted
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49954 [302]: GET /jobs
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49954 Closing
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49960 Accepted
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49960 [200]: GET /2fa-setup
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49960 Closing
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49964 Accepted
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49974 Accepted
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49964 [404]: GET /livewire-64d00f09/livewire.js?id=657d57c2 - No such file or directory
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49964 Closing
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49974 [200]: GET /assets/logo.webp
+[Fri Jul  3 02:46:22 2026] 127.0.0.1:49974 Closing
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:49978 Accepted
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:49978 [302]: GET /inventory
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:49978 Closing
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:49994 Accepted
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:49994 [200]: GET /2fa-setup
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:49994 Closing
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:50006 Accepted
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:50014 Accepted
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:50006 [200]: GET /assets/logo.webp
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:50014 [404]: GET /livewire-64d00f09/livewire.js?id=657d57c2 - No such file or directory
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:50014 Closing
+[Fri Jul  3 02:46:24 2026] 127.0.0.1:50006 Closing
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34326 Accepted
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34326 [302]: GET /trucks
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34326 Closing
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34338 Accepted
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34338 [200]: GET /2fa-setup
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34338 Closing
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34352 Accepted
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34362 Accepted
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34352 [200]: GET /assets/logo.webp
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34362 [404]: GET /livewire-64d00f09/livewire.js?id=657d57c2 - No such file or directory
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34362 Closing
+[Fri Jul  3 02:46:25 2026] 127.0.0.1:34352 Closing
