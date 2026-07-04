@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\Auditable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Media extends Model
 {
-    use HasFactory;
+    use HasFactory, Auditable;
 
-    protected $fillable = [
+    protected  = [
         'mediable_type',
         'mediable_id',
         'collection',
@@ -24,6 +25,11 @@ class Media extends Model
 
     public function mediable()
     {
-        return $this->morphTo();
+        return ->morphTo();
+    }
+
+    public function uploader()
+    {
+        return ->belongsTo(User::class, 'uploaded_by');
     }
 }

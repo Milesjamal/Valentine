@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\HasBranchScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ServiceRequest extends Model
 {
-    use HasFactory;
+    use HasFactory, HasBranchScope;
 
     protected $fillable = [
         'customer_id',
@@ -24,18 +26,23 @@ class ServiceRequest extends Model
         'preferred_date' => 'date',
     ];
 
-    public function customer()
+    public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
     }
 
-    public function equipment()
+    public function equipment(): BelongsTo
     {
         return $this->belongsTo(Equipment::class);
     }
 
-    public function service()
+    public function service(): BelongsTo
     {
         return $this->belongsTo(Service::class);
+    }
+
+    public function branch(): BelongsTo
+    {
+        return $this->belongsTo(Branch::class);
     }
 }

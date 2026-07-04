@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Traits\Auditable;
+use App\Traits\HasBranchScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,10 +12,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Customer extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Auditable, HasBranchScope;
 
-    protected $fillable = [
+    protected  = [
         'user_id',
+        'branch_id',
         'company_name',
         'contact_name',
         'phone',
@@ -25,17 +28,27 @@ class Customer extends Model
         'is_active',
     ];
 
-    protected $casts = [
+    protected  = [
         'is_active' => 'boolean',
     ];
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return ->belongsTo(User::class);
+    }
+
+    public function branch(): BelongsTo
+    {
+        return ->belongsTo(Branch::class);
     }
 
     public function communicationLogs(): HasMany
     {
-        return $this->hasMany(CustomerNote::class);
+        return ->hasMany(CustomerNote::class);
+    }
+
+    public function equipment(): HasMany
+    {
+        return ->hasMany(Equipment::class);
     }
 }

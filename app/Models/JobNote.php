@@ -2,26 +2,32 @@
 
 namespace App\Models;
 
+use App\Traits\Auditable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class JobNote extends Model
 {
-    use HasFactory;
+    use HasFactory, Auditable;
 
-    protected $fillable = [
+    protected  = [
         'job_id',
         'author_id',
         'note',
         'is_customer_visible',
     ];
 
-    protected $casts = [
+    protected  = [
         'is_customer_visible' => 'boolean',
     ];
 
+    public function job()
+    {
+        return ->belongsTo(WorkshopJob::class, 'job_id');
+    }
+
     public function author()
     {
-        return $this->belongsTo(User::class, 'author_id');
+        return ->belongsTo(User::class, 'author_id');
     }
 }

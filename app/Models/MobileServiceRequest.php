@@ -2,16 +2,19 @@
 
 namespace App\Models;
 
+use App\Traits\HasBranchScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class MobileServiceRequest extends Model
 {
-    use HasFactory;
+    use HasFactory, HasBranchScope;
 
-    protected $fillable = [
+    protected  = [
         'customer_id',
         'equipment_id',
+        'branch_id',
         'service_location_id',
         'problem_description',
         'preferred_date',
@@ -20,27 +23,27 @@ class MobileServiceRequest extends Model
         'converted_job_id',
     ];
 
-    protected $casts = [
+    protected  = [
         'preferred_date' => 'date',
     ];
 
-    public function customer()
+    public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class);
+        return ->belongsTo(Customer::class);
     }
 
-    public function equipment()
+    public function equipment(): BelongsTo
     {
-        return $this->belongsTo(Equipment::class);
+        return ->belongsTo(Equipment::class);
     }
 
-    public function serviceLocation()
+    public function serviceLocation(): BelongsTo
     {
-        return $this->belongsTo(ServiceLocation::class);
+        return ->belongsTo(ServiceLocation::class);
     }
 
-    public function assignedMechanic()
+    public function assignedMechanic(): BelongsTo
     {
-        return $this->belongsTo(Mechanic::class, 'assigned_mechanic_id');
+        return ->belongsTo(Mechanic::class, 'assigned_mechanic_id');
     }
 }

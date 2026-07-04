@@ -2,19 +2,22 @@
 
 namespace App\Models;
 
+use App\Traits\HasBranchScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Invoice extends Model
 {
-    use HasFactory;
+    use HasFactory, HasBranchScope;
 
-    protected $fillable = [
+    protected  = [
         'invoice_number',
         'job_id',
         'quotation_id',
         'customer_id',
+        'branch_id',
         'status',
         'subtotal',
         'discount_amount',
@@ -25,7 +28,7 @@ class Invoice extends Model
         'issued_at',
     ];
 
-    protected $casts = [
+    protected  = [
         'due_date' => 'date',
         'issued_at' => 'datetime',
         'subtotal' => 'decimal:2',
@@ -35,26 +38,26 @@ class Invoice extends Model
 
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class);
+        return ->belongsTo(Customer::class);
     }
 
     public function job(): BelongsTo
     {
-        return $this->belongsTo(WorkshopJob::class, 'job_id');
+        return ->belongsTo(WorkshopJob::class, 'job_id');
     }
 
     public function quotation(): BelongsTo
     {
-        return $this->belongsTo(Quotation::class);
+        return ->belongsTo(Quotation::class);
     }
 
-    public function items()
+    public function items(): HasMany
     {
-        return $this->hasMany(InvoiceItem::class);
+        return ->hasMany(InvoiceItem::class);
     }
 
-    public function payments()
+    public function payments(): HasMany
     {
-        return $this->hasMany(Payment::class);
+        return ->hasMany(Payment::class);
     }
 }

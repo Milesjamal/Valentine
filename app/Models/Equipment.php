@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Traits\Auditable;
+use App\Traits\HasBranchScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,12 +12,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Equipment extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Auditable, HasBranchScope;
 
-    protected $table = 'equipment';
+    protected  = 'equipment';
 
-    protected $fillable = [
+    protected  = [
         'customer_id',
+        'branch_id',
         'equipment_name',
         'category',
         'manufacturer',
@@ -28,23 +31,33 @@ class Equipment extends Model
         'notes',
     ];
 
-    protected $casts = [
+    protected  = [
         'purchase_date' => 'date',
         'operating_hours' => 'integer',
     ];
 
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class);
+        return ->belongsTo(Customer::class);
+    }
+
+    public function branch(): BelongsTo
+    {
+        return ->belongsTo(Branch::class);
     }
 
     public function jobs(): HasMany
     {
-        return $this->hasMany(WorkshopJob::class);
+        return ->hasMany(WorkshopJob::class, 'equipment_id');
     }
 
     public function maintenanceHistory(): HasMany
     {
-        return $this->hasMany(MaintenanceHistory::class);
+        return ->hasMany(MaintenanceHistory::class, 'equipment_id');
+    }
+
+    public function media()
+    {
+        return ->morphMany(Media::class, 'mediable');
     }
 }

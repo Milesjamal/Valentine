@@ -2,16 +2,17 @@
 
 namespace App\Models;
 
+use App\Traits\Auditable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class JobStatusHistory extends Model
 {
-    use HasFactory;
+    use HasFactory, Auditable;
 
-    protected $table = 'job_status_history';
+    protected  = 'job_status_history';
 
-    protected $fillable = [
+    protected  = [
         'job_id',
         'from_status',
         'to_status',
@@ -19,12 +20,17 @@ class JobStatusHistory extends Model
         'changed_at',
     ];
 
-    protected $casts = [
+    protected  = [
         'changed_at' => 'datetime',
     ];
 
+    public function job()
+    {
+        return ->belongsTo(WorkshopJob::class, 'job_id');
+    }
+
     public function user()
     {
-        return $this->belongsTo(User::class, 'changed_by');
+        return ->belongsTo(User::class, 'changed_by');
     }
 }

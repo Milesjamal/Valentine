@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
+use App\Traits\HasBranchScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class InventoryTransaction extends Model
 {
-    use HasFactory;
+    use HasFactory, HasBranchScope;
 
-    protected $fillable = [
+    protected  = [
         'product_id',
         'branch_id',
         'type',
@@ -20,17 +22,17 @@ class InventoryTransaction extends Model
         'created_by',
     ];
 
-    protected $casts = [
+    protected  = [
         'quantity' => 'decimal:2',
     ];
 
-    public function product()
+    public function product(): BelongsTo
     {
-        return $this->belongsTo(Product::class);
+        return ->belongsTo(Product::class);
     }
 
-    public function branch()
+    public function branch(): BelongsTo
     {
-        return $this->belongsTo(Branch::class);
+        return ->belongsTo(Branch::class);
     }
 }

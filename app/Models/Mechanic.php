@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
+use App\Traits\HasBranchScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Mechanic extends Model
 {
-    use HasFactory;
+    use HasFactory, HasBranchScope;
 
-    protected $fillable = [
+    protected  = [
         'user_id',
         'branch_id',
         'employee_code',
@@ -18,22 +21,22 @@ class Mechanic extends Model
         'is_available',
     ];
 
-    protected $casts = [
+    protected  = [
         'is_available' => 'boolean',
     ];
 
-    public function user()
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return ->belongsTo(User::class);
     }
 
-    public function branch()
+    public function branch(): BelongsTo
     {
-        return $this->belongsTo(Branch::class);
+        return ->belongsTo(Branch::class);
     }
 
-    public function jobs()
+    public function jobs(): HasMany
     {
-        return $this->hasMany(WorkshopJob::class, 'assigned_mechanic_id');
+        return ->hasMany(WorkshopJob::class, 'assigned_mechanic_id');
     }
 }

@@ -2,17 +2,21 @@
 
 namespace App\Models;
 
+use App\Traits\HasBranchScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Quotation extends Model
 {
-    use HasFactory;
+    use HasFactory, HasBranchScope;
 
-    protected $fillable = [
+    protected  = [
         'quotation_number',
         'job_id',
         'customer_id',
+        'branch_id',
         'status',
         'subtotal',
         'discount_amount',
@@ -25,24 +29,24 @@ class Quotation extends Model
         'decided_by',
     ];
 
-    protected $casts = [
+    protected  = [
         'valid_until' => 'date',
         'decided_at' => 'datetime',
         'total' => 'decimal:2',
     ];
 
-    public function customer()
+    public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class);
+        return ->belongsTo(Customer::class);
     }
 
-    public function job()
+    public function job(): BelongsTo
     {
-        return $this->belongsTo(WorkshopJob::class, 'job_id');
+        return ->belongsTo(WorkshopJob::class, 'job_id');
     }
 
-    public function items()
+    public function items(): HasMany
     {
-        return $this->hasMany(QuotationItem::class);
+        return ->hasMany(QuotationItem::class);
     }
 }
