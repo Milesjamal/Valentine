@@ -16,7 +16,7 @@
 
       [2m+1 vendor frames [22m
 
-  2   app/Providers/AppServiceProvider.php:29
+  2   app/Providers/AppServiceProvider.php:33
       Composer\Autoload\ClassLoader::loadClass()
       [2m+7 vendor frames [22m
 
